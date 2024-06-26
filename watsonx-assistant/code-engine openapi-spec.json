@@ -1,0 +1,125 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Trigger Code Engine Function for PA Virtual Assistant",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://pa-virtual-assistant-test.1hahaxkzouei.us-south.codeengine.appdomain.cloud",
+      "description": "Call a function and write values into PA"
+    }
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "summary": "Invoke my Code Engine function",
+        "description": "Code engine function using optional query parameters",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "organization",
+            "schema": {
+              "type": "string"
+            },
+            "description": "organization"
+          },
+          {
+            "in": "query",
+            "name": "channel",
+            "schema": {
+              "type": "string"
+            },
+            "description": "channel"
+          },
+          {
+            "in": "query",
+            "name": "year",
+            "schema": {
+              "type": "string"
+            },
+            "description": "year"
+          },
+          {
+            "in": "query",
+            "name": "month",
+            "schema": {
+              "type": "string"
+            },
+            "description": "month"
+          },
+          {
+            "in": "query",
+            "name": "product",
+            "schema": {
+              "type": "string"
+            },
+            "description": "product"
+          },
+          {
+            "in": "query",
+            "name": "units",
+            "schema": {
+              "type": "number"
+            },
+            "description": "units"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "__ce_method": {
+                      "description": "The type of HTTP method call",
+                      "type": "string"
+                    },
+                    "organization": {
+                      "description": "The organization query param by user",
+                      "type": "string"
+                    },
+                    "channel": {
+                      "description": "The channel query param by user",
+                      "type": "string"
+                    },
+                    "year": {
+                      "description": "The year query param by user",
+                      "type": "string"
+                    },
+                    "month": {
+                      "description": "The month query param by user",
+                      "type": "string"
+                    },
+                    "product": {
+                      "description": "The product query param by user",
+                      "type": "string"
+                    },
+                    "units": {
+                      "description": "The units query param by user",
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Something is wrong somewhere",
+                  "type": "string",
+                  "example": "Not found"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
