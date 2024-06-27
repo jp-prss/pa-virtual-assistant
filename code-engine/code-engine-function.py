@@ -2,6 +2,7 @@ def main(params):
     import subprocess
     import sys
     import json
+    import os
 
     def install(package):
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
@@ -13,10 +14,10 @@ def main(params):
 
     # PA credentials
     credentials = {
-    "address": "svc-useast.event.techzone.ibm.com",
-    "port":'31859',
-    "user":"admin",
-    "password":"apple",
+    "address": os.environ['address'],
+    "port": os.environ['port'],
+    "user": os.environ['user'],
+    "password": os.environ['password'],
     "ssl":True,
     "namespace":None}
 

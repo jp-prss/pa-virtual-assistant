@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "https://pa-virtual-assistant-test.1hahaxkzouei.us-south.codeengine.appdomain.cloud",
+      "url": "https://pa-virtual-assistant-jp.1hahaxkzouei.us-south.codeengine.appdomain.cloud",
       "description": "Call a function and write values into PA"
     }
   ],

@@ -1,0 +1,14 @@
+#Section Prolog
+
+pApiKey = '';
+pProjectID = '';
+pInstruction = '"' | pInstruction | '"';
+pyExe = '"C:\Users\Administrator\anaconda3\python.exe"';
+pyFile = '"C:\TM1Models\24Retail\forecast\tm1GenAI.py"';
+
+IF(DimensionElementExists('View', pViewname) = 0);
+  DimensionElementInsertDirect('View', '', pViewname, 'N');
+ENDIF;
+
+#Section Epilog
+EXECUTECOMMAND(pyExe | ' ' | pyFile | ' ' | pApiKey | ' ' | pProjectID | ' ' | pCubename | ' ' | pViewname | ' ' | pInstruction ,1);
