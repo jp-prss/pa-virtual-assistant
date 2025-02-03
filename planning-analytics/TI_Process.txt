@@ -4,7 +4,7 @@ pApiKey = '';
 pProjectID = '';
 pInstruction = '"' | pInstruction | '"';
 pyExe = '"C:\Users\Administrator\anaconda3\python.exe"';
-pyFile = '"C:\TM1Models\24Retail\forecast\tm1GenAI.py"';
+pyFile = '"C:\TM1Models\24Retail\watsonx\tm1GenAI.py"';
 
 IF(DimensionElementExists('View', pViewname) = 0);
   DimensionElementInsertDirect('View', '', pViewname, 'N');

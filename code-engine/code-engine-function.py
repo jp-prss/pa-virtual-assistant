@@ -18,7 +18,7 @@ def main(params):
     "port": os.environ['port'],
     "user": os.environ['user'],
     "password": os.environ['password'],
-    "ssl":True,
+    "ssl": False,
     "namespace":None}
 
 
@@ -32,7 +32,7 @@ def main(params):
         "units": params.get('units', 0)}
 
     try:
-        with TM1Service(address=credentials["address"], port=credentials["port"], user=credentials["user"], password=credentials["password"], ssl=False, namespace=credentials["namespace"]) as tm1:
+        with TM1Service(address=credentials["address"], port=credentials["port"], user=credentials["user"], password=credentials["password"], ssl=credentials["ssl"], namespace=credentials["namespace"]) as tm1:
             # Cellset = Data Record written into PA
             cellset = {
                 (parameter["organization"],
