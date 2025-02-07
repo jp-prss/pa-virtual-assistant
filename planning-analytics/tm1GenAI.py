@@ -67,7 +67,7 @@ access_token = IAMTokenManager(
 ).get_token()
 
 # Define LLM to use and its decoding parameters
-model_id = "meta-llama/llama-3-70b-instruct"
+model_id = "meta-llama/llama-3-3-70b-instruct"
 parameters = {
     "decoding_method": "greedy",
     "max_new_tokens": 1000,
