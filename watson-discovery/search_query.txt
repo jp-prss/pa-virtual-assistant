@@ -1,0 +1,17 @@
+{
+  "query": {
+    "nested": {
+      "path": "passages",
+      "query": {
+        "text_expansion": {
+          "passages.sparse.tokens": {
+            "model_id": ".elser_model_2",
+            "model_text": "$QUERY"
+          }
+        }
+      },
+      "inner_hits": {"_source": {"excludes": ["passages.sparse"]}}
+    }
+  },
+  "_source": false
+}
